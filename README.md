@@ -1,14 +1,16 @@
 C# .NET CRUD MVC RAZORPAGE
 
 1 - Criar o projeto
-	1.1 - ASP.NET Core Web App (Razor Pages)
+	
+ 	1.1 - ASP.NET Core Web App (Razor Pages)
 	1.2 - Escolhe o framework desejado (Eu escolhi .net8)
 	1.3 - Authentication type = individual accounts
 	1.4 - [v] Configure HTTPS
 	1.5 - Escolhe se vai querer docker ou não 
 
 2 - Criar Modelos
-	2.1 - Criar a pasta Models
+	
+ 	2.1 - Criar a pasta Models
 	2.2 - Criar primeira Model
 	2.3 - Para ter certeza de que as anotações estão funcionando importe sem as aspas duplas "using System.ComponentModel.DataAnnotations;"
 	2.4 - Algumas anotações essenciais: 
@@ -21,21 +23,24 @@ C# .NET CRUD MVC RAZORPAGE
 		[EmailAddress(ErrorMessage = "msg"))]
 
 3 - Adicionar suporte ao Entity Framework com SQLite para persistir os dados
-	3.1 Pelo Nuget Package Manager
-				Tools 	
-				-> NuGet Package Manager 
-				-> Manage Nuget Packages for Solution 
-				-> Download&Install(Microsoft.EntityFrameWorkCore.Sqlite)
+	
+ 	3.1 Pelo Nuget Package Manager
+	Tools 	
+	-> NuGet Package Manager 
+	-> Manage Nuget Packages for Solution 
+	-> Download&Install(Microsoft.EntityFrameWorkCore.Sqlite)
 
 	3.2 Pelo Terminal
 		Comando: 
 	dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 
 4 - Atualizar as referências no ApplicationDbContext para que as tabelas possam se geradas no banco.
-	ex: public DbSet<NomeDaClasse> NomeDaClasse { get; set; } = default!;
+	
+ 	ex: public DbSet<NomeDaClasse> NomeDaClasse { get; set; } = default!;
 
 5 - Criar uma migração para atualizar o banco
-	5.1 - Instalar a ferramenta dotnet EntityFramework
+	
+ 	5.1 - Instalar a ferramenta dotnet EntityFramework
 	Comando: dotnet tool install --global dotnet-ef
 
 	5.2 - Criar migração
@@ -45,7 +50,8 @@ C# .NET CRUD MVC RAZORPAGE
 	Comando: dotnet ef database update
 
 6 - Criar templates -> Scaffold
-	6.1 - Instalar gerador de código
+	
+ 	6.1 - Instalar gerador de código
 	Comando: dotnet tool install -g dotnet-aspnet-codegenerator
 
 	6.2 - Instalar o gerador de códigos
@@ -59,7 +65,8 @@ C# .NET CRUD MVC RAZORPAGE
 		-> Download&Install(Microsoft.VirtualStudio.Web.CodeGenerator.Design)
 
 7 - Criar as RazorPage (templates)
-	7.1 - Com o seguinte código pode-se criar os templates de Create, List, Update, Delete e Details. Precisa apenas mudar o nome do template.
+	
+ 	7.1 - Com o seguinte código pode-se criar os templates de Create, List, Update, Delete e Details. Precisa apenas mudar o nome do template.
 
 	7.2 - Comando para criar RazorPage
 	Comando: dotnet aspnet-codegenerator razorpage Create Create -m Student -dc ApplicationDbContext -sqlite -udl -outDir Pages/Students
@@ -93,7 +100,8 @@ C# .NET CRUD MVC RAZORPAGE
 		Detalhes: Details Details
 
 8 - Observação quando for Listar
-	8.1 - Pegando Student como exemplo. Quando formos listar não podemos esquecer de mudar no asp-page o "Students" e depois adicionar "/Index", ficando "Students/Index"
+	
+ 	8.1 - Pegando Student como exemplo. Quando formos listar não podemos esquecer de mudar no asp-page o "Students" e depois adicionar "/Index", ficando "Students/Index"
 	Exemplo:
 	<li class="nav-item">
     	<a class="nav-link text-dark" asp-area="" asp-page="Students/Index">Home</a>

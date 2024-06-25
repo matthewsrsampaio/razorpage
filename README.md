@@ -34,7 +34,7 @@ C# .NET CRUD MVC RAZORPAGE
 		Comando: 
 	dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 
-4 - Atualizar as referências no ApplicationDbContext para que as tabelas possam se geradas no banco.
+4 - Atualizar as referências no ApplicationDbContext para que as tabelas possam ser geradas no banco.
 	
  	ex: public DbSet<NomeDaClasse> NomeDaClasse { get; set; } = default!;
 
@@ -54,7 +54,7 @@ C# .NET CRUD MVC RAZORPAGE
  	6.1 - Instalar gerador de código
 	Comando: dotnet tool install -g dotnet-aspnet-codegenerator
 
-	6.2 - Instalar o gerador de códigos
+	6.2 - Adicionar o pacote do gerador de códigos
 		6.2.1  Terminal
 		Comando: dotnet add package Microsoft.VirtualStudio.Web.CodeGenerator.Design
 
